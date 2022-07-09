@@ -1,0 +1,2 @@
+model_checkpoint_path: "d:\\InsureIt\\Machine Learning Models\\Query_Chatbot\\model.tflearn"
+all_model_checkpoint_paths: "d:\\InsureIt\\Machine Learning Models\\Query_Chatbot\\model.tflearn"
