@@ -1,2 +1,0 @@
-# Insureit
-EXL Hackathon
