@@ -10,22 +10,87 @@
   <meta name="author" content=""/>
 
   <title>InsureIT</title>
-
-  <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet"/>
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet"/>
+  
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+    <!-- ChatBot -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.convform.css" />
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.convform.js"></script>
+    <script type="text/javascript" src="js/chatbot.js"></script>
 </head>
 
 <body>
+  <div class="chat_icon">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+  </div>
+  <div class="chat_box">
+    <div class="my-conv-form-wrapper">
+      <form action="" method="GET" class="hidden">
+        <select
+          data-conv-question="Hello! How can I help you"
+          name="category"
+        >
+          <option value="WebDevelopment">Website Development ?</option>
+          <option value="DigitalMarketing">Digital Marketing ?</option>
+        </select>
+
+        <div data-conv-fork="category">
+          <div data-conv-case="WebDevelopment">
+            <input
+              type="text"
+              name="domainName"
+              data-conv-question="Please, tell me your domain name"
+            />
+          </div>
+          <div
+            data-conv-case="DigitalMarketing"
+            data-conv-fork="first-question2"
+          >
+            <input
+              type="text"
+              name="companyName"
+              data-conv-question="Please, enter your company name"
+            />
+          </div>
+        </div>
+
+        <input
+          type="text"
+          name="name"
+          data-conv-question="Please, Enter your name"
+        />
+
+        <input
+          type="text"
+          data-conv-question="Hi {name}, <br> It's a pleasure to meet you."
+          data-no-answer="true"
+        />
+
+        <input
+          data-conv-question="Enter your e-mail"
+          data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+          type="email"
+          name="email"
+          required
+          placeholder="What's your e-mail?"
+        />
+
+        <select data-conv-question="Please Conform">
+          <option value="Yes">Confirm</option>
+        </select>
+      </form>
+    </div>
+  </div>  
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -57,13 +122,10 @@
                     <li class="nav-item">
                       <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="#"> Login</a>
-                    </li>
+                    </li> -->
                   </ul>
-                  <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                  </form>
                 </div>
               </div>
             </nav>
@@ -206,7 +268,6 @@
     </section>
     <!-- end slider section -->
   </div>
-
   <!-- welcome section -->
   <section class="welcome_section layout_padding">
     <div class="container">
@@ -531,183 +592,5 @@
     </form>
     
   </section>
-
-
-  <!-- end contact section -->
-  <div class="footer_bg">
-    <!-- info section -->
-    <section class="info_section layout_padding2-bottom">
-      <div class="container">
-        <h3 class="">
-          InsureIT
-        </h3>
-      </div>
-      <div class="container info_content">
-
-        <div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Useful Link
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                
-                 
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  The Services
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Contact Us
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
-          <div class="social-box">
-            <a href="">
-              <img src="images/fb.png" alt=""/>
-            </a>
-
-            <a href="">
-              <img src="images/twitter.png" alt=""/>
-            </a>
-            <a href="">
-              <img src="images/linkedin1.png" alt=""/>
-            </a>
-            <a href="">
-              <img src="images/instagram1.png" alt=""/>
-            </a>
-          </div>
-          <div class="form_container mt-5">
-            <form action="">
-              <label for="subscribeMail">
-                for updates:
-              </label>
-              <input type="email" placeholder="Enter Your email" id="subscribeMail"/>
-              <button type="submit">
-                send
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- end info_section -->
-
-    <!-- footer section -->
-    <section class="container-fluid footer_section">
-      <p>
-        © 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </section>
-    <!-- footer section -->
-  </div>
-
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-
-
-
 </body></html>
