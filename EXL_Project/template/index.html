@@ -47,14 +47,24 @@
             <input type="text" name="Age" data-conv-question="Please tell me the age?" />
           </div>
           <div data-conv-case="Predict">
-            <input type="text" name="sum_assured" data-conv-question="No Limit for Maximum sum assured?" />
+            <select name="sum_assured" data-conv-question="Select the SEX : " >
+              <option value="Male">Male</option>
+              <option value="Female"> Female</option>
+              <option value="Transgender">TransGender</option>
+            </select>
           </div>
           <div data-conv-case="Predict">
-            <select name="premium_payment" data-conv-question="Various premium payment?">
-              <option value="Regular">Regular</option>
-              <option value="Limited">Limited</option>
-              <option value="Single_premium">Single Premium</option>
+            <input type="text" name="BMI" data-conv-question="Please Enter the BMI ">
+          </div>
+          <div data-conv-case="Predict">
+            <input type="text" name="noofchildren" data-conv-question="Please, Enter No of children: " />
+          </div>
+          <div data-conv-case="Predict">
+            <select name="Smoke" data-conv-question="Whether you smoke ? ">
+              <option value="Yes">Yes&#128513;</option>
+              <option value="No">No &#128532; </option>
             </select>
+
           </div>
           <div data-conv-case="Predict">
             <input type="text" name="name" data-conv-question="Please, Enter your name" />
