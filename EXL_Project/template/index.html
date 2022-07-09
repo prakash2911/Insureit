@@ -43,29 +43,29 @@
           <option value="other_service"> other services</option>
         </select>
         <div data-conv-fork="category">
-          <div data-conv-case="Predict">
-            <input type="text" name="Age" data-conv-question="Please tell me the age?" />
-          </div>
-          <div data-conv-case="Predict">
-            <select name="sum_assured" data-conv-question="Select the SEX : " >
-              <option value="Male">Male</option>
-              <option value="Female"> Female</option>
-              <option value="Transgender">TransGender</option>
-            </select>
-          </div>
-          <div data-conv-case="Predict">
-            <input type="text" name="BMI" data-conv-question="Please Enter the BMI ">
-          </div>
-          <div data-conv-case="Predict">
-            <input type="text" name="noofchildren" data-conv-question="Please, Enter No of children: " />
-          </div>
-          <div data-conv-case="Predict">
-            <select name="Smoke" data-conv-question="Whether you smoke ? ">
-              <option value="Yes">Yes&#128513;</option>
-              <option value="No">No &#128532; </option>
-            </select>
-
-          </div>
+          <form action="{{url_for('chatbot')}}" method="post">
+            <div data-conv-case="Predict">
+              <input type="text" name="Age" data-conv-question="Please tell me the age?" />
+            </div>
+            <div data-conv-case="Predict">
+              <select name="Sex" data-conv-question="Select the SEX : " >
+                <option value="Male">Male</option>
+                <option value="Female"> Female</option>
+              </select>
+            </div>
+            <div data-conv-case="Predict">
+              <input type="text" name="BMI" data-conv-question="Please Enter the BMI ">
+            </div>
+            <div data-conv-case="Predict">
+              <input type="text" name="noofchildren" data-conv-question="Please, Enter No of children: " />
+            </div>
+            <div data-conv-case="Predict">
+              <select name="Smoke" data-conv-question="Whether you smoke ? ">
+                <option value="Yes">Yes&#128513;</option>
+                <option value="No">No &#128532; </option>
+              </select>
+            </div>
+          </form>
           <div data-conv-case="Predict">
             <input type="text" name="name" data-conv-question="Please, Enter your name" />
           </div>
@@ -83,8 +83,8 @@
               <option value="Yes">Confirm</option>
             </select>
           </div>
-          <div data-conv-case="Predicr">
-            <input type="text" data-conv-question="thank you"  readonly>
+          <div data-conv-case="Predict">
+            <input type="text" data-conv-question="thank you">
           </div>
           <div data-conv-case="other_service" data-conv-fork="first-question2">
             <select name="services1" data-conv-question="Select the service">
