@@ -38,34 +38,33 @@
   <div class="chat_box">
     <div class="my-conv-form-wrapper">
       <form action="" method="post" class="hidden">
-        <select data-conv-question="select the service" name="category">
-          <option value="Predict">Predict the insurance</option>
-          <option value="other_service"> other services</option>
-        </select>
-        <div data-conv-fork="category">
-          <form action="{{url_for('chatbot')}}" method="post">
-            <div data-conv-case="Predict">
-              <input type="text" name="Age" data-conv-question="Please tell me the age?" />
-            </div>
-            <div data-conv-case="Predict">
-              <select name="Sex" data-conv-question="Select the SEX : " >
-                <option value="Male">Male</option>
-                <option value="Female"> Female</option>
-              </select>
-            </div>
-            <div data-conv-case="Predict">
-              <input type="text" name="BMI" data-conv-question="Please Enter the BMI ">
-            </div>
-            <div data-conv-case="Predict">
-              <input type="text" name="noofchildren" data-conv-question="Please, Enter No of children: " />
-            </div>
-            <div data-conv-case="Predict">
-              <select name="Smoke" data-conv-question="Whether you smoke ? ">
-                <option value="Yes">Yes&#128513;</option>
-                <option value="No">No &#128532; </option>
-              </select>
-            </div>
-          </form>
+      <form method="post" action="{{url_for('checking')}}" class="hidden">
+      <select data-conv-question="select the service" name="category">
+        <option value="Predict">Predict the insurance</option>
+        <option value="other_service"> other services</option>
+      </select>
+      <div data-conv-fork="category">
+          <div data-conv-case="Predict">
+            <input type="text" name="Age" data-conv-question="Please tell me the age?" />
+          </div>
+          <div data-conv-case="Predict">
+            <select name="Sex" data-conv-question="Select the SEX : ">
+              <option value="Male">Male</option>
+              <option value="Female"> Female</option>
+            </select>
+          </div>
+          <div data-conv-case="Predict">
+            <input type="text" name="BMI" data-conv-question="Please Enter the BMI ">
+          </div>
+          <div data-conv-case="Predict">
+            <input type="text" name="noofchildren" data-conv-question="Please, Enter No of children: " />
+          </div>
+          <div data-conv-case="Predict">
+            <select name="Smoke" data-conv-question="Whether you smoke ? ">
+              <option value="Yes">Yes&#128532;</option>
+              <option value="No">No &#128513; </option>
+            </select>
+          </div>
           <div data-conv-case="Predict">
             <input type="text" name="name" data-conv-question="Please, Enter your name" />
           </div>
@@ -76,40 +75,37 @@
           <div data-conv-case="Predict">
             <input data-conv-question="Enter your e-mail"
               data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-              type="email" name="email" required placeholder="What's your e-mail?" />
+              type="email" name="inputemail" required placeholder="What's your e-mail?" />
           </div>
           <div data-conv-case="Predict">
-            <select data-conv-question="Please Confirm result will be send as a mail.">
-              <option value="Yes">Confirm</option>
+              <select data-conv-question="Please Confirm, result will be send as a mail.">
+                <option onchange="this.form.submit()">Confirm</option>  
             </select>
           </div>
-          <div data-conv-case="Predict">
-            <input type="text" data-conv-question="thank you">
-          </div>
-          <div data-conv-case="other_service" data-conv-fork="first-question2">
-            <select name="services1" data-conv-question="Select the service">
-              <option value="Insurances">Insurance</option>
-              <option value="contactdetail">Contact</option>
-            </select>
-            <div data-conv-fork="services1">
-              <div data-conv-case="Insurances">
-                <select name="products" data-conv-question="the products that are provided : ">
-                  <option value="Term Insurance">Term Insurance</option>
-                  <option value="Whole plan">Whole Life plan</option>
-                  <option value="Pension Plan">Pension Plan</option>
-                  <option value="Health Plan">Health Plan</option>
-                  <option value="children Plan">children Plan</option>
-                </select>
-              </div>
-              <div data-conv-case="contactdetail">
-                <input type ='text' readonly data-conv-question="Our Customer Service phone line is available 24/7">
-                <input type ='text' readonly data-conv-question="Contact : 23942940124"> 
-                </div>  
-              </div>
+        </form>
+        <div data-conv-case="other_service" data-conv-fork="first-question2">
+          <select name="services1" data-conv-question="Select the service">
+            <option value="Insurances">Insurance</option>
+            <option value="contactdetail">Contact</option>
+          </select>
+          <div data-conv-fork="services1" data-conv-case="other_service">
+            <div data-conv-case="Insurances">
+              <select name="products" data-conv-question="the products that are provided : ">
+                <option value="Term Insurance" data-no-answer="true">Term Insurance</option>
+                <option value="Whole plan" data-no-answer="true">Whole Life plan</option>
+                <option value="Pension Plan" data-no-answer="true">Pension Plan</option>
+                <option value="Health Plan" data-no-answer="true">Health Plan</option>
+                <option value="children Plan" data-no-answer="true">children Plan</option>
+              </select>
+            </div>
+            <div data-conv-case="contactdetail">
+              <input type='text' data-no-answer="true"
+                data-conv-question="Our Customer Service phone line is available 24/7">
+              <input type='text' data-no-answer="true" data-conv-question="Contact : 23942940124">
             </div>
           </div>
-          </div>
-      </form>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero_area">
