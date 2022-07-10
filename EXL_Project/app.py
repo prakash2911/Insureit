@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__, template_folder='template')
-model = pickle.load(open('C:/Users/praka/Documents/GitHub/Insureit/EXL_Project/model.pkl', 'rb'))
+model = pickle.load(open('D:\InsureIt\Insureit\EXL_Project\model.pkl', 'rb'))
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
