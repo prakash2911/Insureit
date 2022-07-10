@@ -1,6 +1,4 @@
-import email
 from flask import Flask, redirect,request,render_template
-from pip import main
 from flask_mail import Mail, Message
 import pickle
 import numpy as np
